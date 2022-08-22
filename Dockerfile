@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:11.4-slim
 
 RUN set -eux \
     && apt-get update -qyy \
