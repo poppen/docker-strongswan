@@ -29,7 +29,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{ env.PACKAGE_REGISTRY }}/${{ github.repository_owner }}/${{ env.REPOSITORY }}
           tags: |
