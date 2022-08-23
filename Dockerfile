@@ -1,8 +1,8 @@
 FROM debian:11.4-slim
 
 RUN set -eux \
-    && apt-get update -qyy \
-    && apt-get install -qyy --no-install-recommends --no-install-suggests \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends --no-install-suggests \
         netbase \
         ca-certificates \
         iproute2 \
@@ -14,6 +14,7 @@ RUN set -eux \
         libstrongswan-extra-plugins \
         libcharon-extauth-plugins \
         libcharon-extra-plugins \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/log/*
 
 COPY config/charon.conf /etc/strongswan.d/charon.conf
