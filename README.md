@@ -1,28 +1,21 @@
-<h1 align="center">strongSwan</h1>
+# strongSwan Docker image
 
-<p align="center">The open source IPsec-based VPN solution.</p>
+The open source IPsec-based VPN solution.
 
-<p align="center">
-    <a href="https://ghcr.io/akafeng/strongswan">Container Registry</a> ·
-    <a href="https://github.com/strongswan/strongswan">Project Source</a>
-</p>
+[Container Registry](https://ghcr.io/poppen/strongswan)&nbsp;|&nbsp;[Project Source](https://github.com/strongswan/strongswan)
 
-<p align="center">
-    <img src="https://img.shields.io/github/workflow/status/akafeng/docker-strongswan/Docker%20Build" />
-    <img src="https://img.shields.io/github/last-commit/akafeng/docker-strongswan" />
-    <img src="https://img.shields.io/github/v/release/akafeng/docker-strongswan" />
-    <img src="https://img.shields.io/github/release-date/akafeng/docker-strongswan" />
-</p>
+[![Docker Build](https://github.com/poppen/docker-strongswan/actions/workflows/push.yml/badge.svg)](https://github.com/poppen/docker-strongswan/actions/workflows/push.yml)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/poppen/docker-strongswan)
 
 ---
 
-### Pull The Image
+## Pull The Image
 
 ```bash
-$ docker pull ghcr.io/akafeng/strongswan
+$ docker pull ghcr.io/poppen/strongswan
 ```
 
-### Start Container
+## Start Container
 
 ```bash
 $ docker run -d \
@@ -31,5 +24,5 @@ $ docker run -d \
   --network=host \
   --restart=unless-stopped \
   --name=strongswan \
-  ghcr.io/akafeng/strongswan
+  ghcr.io/poppen/strongswan
 ```
