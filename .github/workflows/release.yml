@@ -1,9 +1,9 @@
 name: Docker Publish
 
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+      - '*'
 
 env:
   REPOSITORY: strongswan
@@ -14,6 +14,13 @@ jobs:
     name: Publish Release
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Set up DISTRO_VERSION
+        run: |
+          echo "DISTRO_VERSION=debian$(grep -E '^FROM' Dockerfile | cut -f2 -d:)" >> "$GITHUB_ENV"
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -36,6 +43,7 @@ jobs:
             type=semver,pattern={{major}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{version}}
+            type=semver,pattern={{version}},value="${STRONGSWAN_VERSION}-${DISTRO_VERSION}"
 
       - name: Build and push
         uses: docker/build-push-action@v3
