@@ -36,6 +36,22 @@ jobs:
           dockerfile: Dockerfile
           ignore: "DL3008"
 
+  container-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build . -t ${{ github.repository_owner  }}/${{ env.REPOSITORY  }}:${{ github.sha }}
+      - name: Scan Docker image
+        uses: Azure/container-scan@v0
+        env:
+          TRIVY_IGNORE_UNFIXED: true
+          # See https://github.com/goodwithtech/dockle/issues/188
+          DOCKLE_HOST: "unix:///var/run/docker.sock"
+        with:
+          image-name: ${{ github.repository_owner  }}/${{ env.REPOSITORY  }}:${{ github.sha }}
+          severity-threshold: HIGH
+
   build:
     name: Build Testing
     runs-on: ubuntu-latest
