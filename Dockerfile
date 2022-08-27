@@ -1,8 +1,8 @@
 FROM debian:11.4-slim
 
 RUN set -eux \
-    && apt-get update \
-    && apt-get install -y --no-install-recommends --no-install-suggests \
+    && apt-get update -qqy \
+    && apt-get install -qqy --no-install-recommends --no-install-suggests \
         netbase \
         ca-certificates \
         iproute2 \
