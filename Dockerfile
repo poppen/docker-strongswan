@@ -2,6 +2,7 @@ FROM debian:11.4-slim
 
 RUN set -eux \
     && apt-get update -qqy \
+    && apt-get upgrade -qqy \
     && apt-get install -qqy --no-install-recommends --no-install-suggests \
         netbase \
         ca-certificates \
