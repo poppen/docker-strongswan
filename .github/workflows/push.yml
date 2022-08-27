@@ -46,6 +46,8 @@ jobs:
         uses: Azure/container-scan@v0
         env:
           TRIVY_IGNORE_UNFIXED: true
+          # See https://github.com/goodwithtech/dockle/issues/188
+          DOCKLE_HOST: "unix:///var/run/docker.sock"
         with:
           image-name: ${{ github.repository_owner  }}/${{ env.REPOSITORY  }}:${{ github.sha }}
           severity-threshold: HIGH
