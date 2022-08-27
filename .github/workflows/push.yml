@@ -58,5 +58,4 @@ jobs:
             linux/ppc64le
             linux/s390x
           cache-to: type=gha, mode=max
-          cache-from: type=gha
           outputs: type=cacheonly
