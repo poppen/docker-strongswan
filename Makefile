@@ -20,10 +20,4 @@ release: strongswan-version
 	@gh release create --generate-notes v$(STRONGSWAN_VERSION)
 	@make clean
 
-.PHONY: re-release
-re-release: strongswan-version
-	@git tag --delete $(STRONGSWAN_VERSION)
-	@git tag $(STRONGSWAN_VERSION)
-	@make clean
-
 .PHONY: test
