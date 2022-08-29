@@ -17,7 +17,7 @@ strongswan-version: build
 
 .PHONY: release
 release: strongswan-version
-	@git tag $(STRONGSWAN_VERSION)
+	@gh release create --generate-notes v$(STRONGSWAN_VERSION)
 	@make clean
 
 .PHONY: re-release
