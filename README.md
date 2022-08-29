@@ -5,7 +5,7 @@ The open source IPsec-based VPN solution.
 [Container Registry](https://ghcr.io/poppen/strongswan)&nbsp;|&nbsp;[Project Source](https://github.com/strongswan/strongswan)
 
 [![Docker Build](https://github.com/poppen/docker-strongswan/actions/workflows/push.yml/badge.svg)](https://github.com/poppen/docker-strongswan/actions/workflows/push.yml)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/poppen/docker-strongswan)](https://ghcr.io/poppen/strongswan)
+[![GitHub Release (latest SemVer)](https://img.shields.io/github/v/release/poppen/docker-strongswan)](https://ghcr.io/poppen/strongswan)
 
 ---
 
