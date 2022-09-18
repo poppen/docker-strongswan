@@ -14,6 +14,7 @@ clean:
 .PHONY: strongswan-version
 strongswan-version: build
 	$(eval STRONGSWAN_VERSION := $(shell docker run --rm $(NAME) swanctl --version 2>&1 | grep -E '^strongSwan' | cut -d' ' -f2))
+	@echo $(STRONGSWAN_VERSION)
 
 .PHONY: release
 release: strongswan-version
